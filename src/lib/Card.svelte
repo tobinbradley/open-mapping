@@ -17,14 +17,14 @@
   svg {
     @apply block mx-auto;
   }
-  .description {
-    min-height: 200px;
+  .card {
+    min-height: 320px;
   }
 </style>
 
 <div>
   <div
-    class="relative flex flex-col rounded-xl border-2 bg-white bg-clip-border text-gray-700 drop-shadow-lg"
+    class="card relative flex flex-col rounded-xl border-2 bg-white bg-clip-border text-gray-700 drop-shadow-lg"
   >
     {#if record.thumbnail}
       <div
@@ -54,7 +54,7 @@
         </div>
       {/if}
       <p
-        class="description text-lg mt-2 leading-5 text-inherit antialiased"
+        class="text-lg mt-2 leading-5 text-inherit antialiased"
       >
         {#if record.description.length >= 353}
           {#if readMore}
