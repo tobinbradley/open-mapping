@@ -11,11 +11,6 @@
   if (window.location.hash) filterString = window.location.hash.substring(1)
   $: if (filterString.length > 0) window.location.hash = filterString
 
-  // TODO: apps JSON
-  // TODO: Data blurb maybe
-  // TODO: Apps blurb maybe
-  // TODO: FOSS we heard blurb mayble
-
   function filter(data, str) {
     const searchStr = str.trim().toUpperCase()
     if (searchStr.length > 0) {
