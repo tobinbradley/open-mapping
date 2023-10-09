@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Open Mapping</title>
+
+    <!-- preconnect for performance -->
+    <link rel="preconnect" href="https://www.google-analytics.com">
+    <link rel="preconnect" href="https://storage.googleapis.com">
+
+    <!-- icon and theme stuff -->
+    <link rel="icon" href="img/favicon.png" type="image/png"><!-- 32×32 -->
+    <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png"><!-- 180×180 -->
+    <meta name="theme-color" content="#2A4365"/>
+    <link rel="manifest" href="manifest.json">
+
+  <!-- preload logo for performance -->
+  <link rel="preload" href="./img/logo.svg" as="image">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" />
+
+  </head>
+  <body class="flex flex-col leading-normal tracking-normal min-h-screen">
+
+    <!--Nav-->
+    <nav id="header" class="w-full z-30 top-0 gradient drop-shadow-md">
+      <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
+        <div class="pl-4 flex items-center">
+
+          <img src="img/logo.svg" alt="open mapping logo" class="h-7 lg:h-10" style="filter: brightness(0) invert(1);">
+          <h1 class="text-2xl font-bold lg:text-4xl ml-1"> <a href="./">OPEN MAPPING</a></h1>
+        </div>
+
+        <div class=" flex-grow   text-black" id="nav-content">
+          <div class="list-reset flex justify-end flex-1 items-center">
+            <a
+              class="mx-1 bg-none bg-white/30 hover:bg-white/60 text-gray-800 font-bold rounded-full mt-0 py-2 px-4 lg:py-4 lg:px-8 hover:shadow-md opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
+              href="data.html"
+            >
+              Data
+            </a>
+            <a
+              class="mx-1 bg-none hover:bg-white/60 text-gray-800 font-bold rounded-full mt-0 py-2 px-4 lg:py-4 lg:px-8 hover:shadow-md opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
+              href="apps.html"
+            >
+              Apps
+            </a>
+          </div>
+        </div>
+      </div>
+      <hr class="border-b border-gray-100 opacity-25 my-0 py-0" />
+    </nav>
+
+
+    <!-- main content -->
+    <main class="bg-white border-b py-8 grow">
+      <h2 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
+        Data
+      </h2>
+      <div class="w-full mb-4">
+        <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+      </div>
+      <div id="app" class="container max-w-8xl m-auto my-14"></div>
+    </main>
+
+
+    <!-- footer -->
+    <footer class="gradient w-full text-center py-6">
+      <ul class="flex flex-wrap items-center justify-evenly">
+        <li><a href="https://gis.mecknc.gov/" target="_blank" class="hover:underline">Mecklenburg County GIS</a> </li>
+        <li><a href="https://mecknc.gov/" target="_blank" class="hover:underline">MeckNC.gov</a></li>
+        <li><a href="https://twitter.com/meckgis" target="_blank" class="hover:underline">MeckGIS on Twitter</a></li>
+      </ul>
+    </footer>
+
+
+    <!-- service worker dialog -->
+    <dialog
+      id="sw-dialog"
+      class="bg-pink-700 text-white px-3 py-2 rounded-r-md border-l-2 border-white shadow-lg"
+    >
+      <div class="flex place-items-center">
+        <div class="flex-1 pr-8 text-lg">
+          Open Mapping has been updated!
+        </div>
+        <div>
+          <button
+            class="px-4 py-2 border-2 border-white rounded bg-white text-pink-700 hover:bg-pink-500 hover:text-white transition-colors duration-300"
+            onclick="window.location.reload()"
+          >
+            Refresh
+          </button>
+        </div>
+      </div>
+    </dialog>
+
+    <script type="module" src="/src/data.ts"></script>
+
+    <!--   Google Analytics -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-44715846-1', 'maps.mecknc.gov');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>

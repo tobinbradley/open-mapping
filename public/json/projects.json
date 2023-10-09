@@ -1,0 +1,67 @@
+[
+  {
+    "description": "Svelte is a new way to build web applications. It's a compiler that takes your declarative components and converts them into efficient JavaScript that surgically updates the DOM.",
+    "title": "Svelte",
+    "theURL": "https://svelte.dev/"
+  },
+  {
+    "description": "An approachable, performant and versatile framework for building web user interfaces.",
+    "title": "Vue",
+    "theURL": "https://vuejs.org/"
+  },
+  {
+    "description": "A utility-first CSS framework.",
+    "title": "Tailwind CSS",
+    "theURL": "https://tailwindcss.com/"
+  },
+  {
+    "description": "Next generation frontend tooling.",
+    "title": "Vite",
+    "theURL": "https://vitejs.dev/"
+  },
+  {
+    "description": "An open-source, cross-platform JavaScript runtime environment.",
+    "title": "Node.js",
+    "theURL": "https://nodejs.org/en"
+  },
+  {
+    "description": "Martin is a tile server able to generate and serve vector tiles on the fly from large PostGIS databases, PMTiles, and MBTiles files, allowing multiple tile sources to be dynamically combined into one. Martin optimizes for speed and heavy traffic, and is written in Rust.",
+    "title": "Martin",
+    "theURL": "https://maplibre.org/martin/"
+  },
+  {
+    "description": "An open-source JavaScript library for mobile-friendly interactive maps.",
+    "title": "Leaflet",
+    "theURL": "https://leafletjs.com/"
+  },
+  {
+    "description": "Open-source TypeScript library for publishing maps on your website. Fast displaying of maps is possible thanks to GPU-accelerated vector tile rendering.",
+    "title": "MapLibre GL JS",
+    "theURL": "https://maplibre.org/projects/maplibre-gl-js/"
+  },
+  {
+    "description": "PostgreSQL is a powerful, open source object-relational database system with over 35 years of active development that has earned it a strong reputation for reliability, feature robustness, and performance.",
+    "title": "PostgreSQL",
+    "theURL": "https://www.postgresql.org/"
+  },
+  {
+    "description": "PostGIS extends the capabilities of the PostgreSQL relational database by adding support storing, indexing and querying geographic data.",
+    "title": "PostGIS",
+    "theURL": "https://postgis.net/"
+  },
+  {
+    "description": "Whether you are an illustrator, designer, web designer or just someone who needs to create some vector imagery, Inkscape is for you!",
+    "title": "Inkscape",
+    "theURL": "https://inkscape.org/"
+  },
+  {
+    "description": "A cross-platform image editor available for GNU/Linux, macOS, Windows and more operating systems.",
+    "title": "GNU Image Manipulation Program",
+    "theURL": "https://www.gimp.org/"
+  },
+  {
+    "description": "A free and open source Geographic Information System.",
+    "title": "QGIS",
+    "theURL": "https://www.qgis.org/en/site/"
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "description": "Aerial viewer built using Leaflet, Svelte, and TailwindCSS.",
+    "title": "Time Machine",
+    "thumbnail": "timemachine.webp",
+    "github": "https://github.com/tobinbradley/timemachine",
+    "theURL": "https://timemachine.mcmap.org/"
+  },
+  {
+    "description": "A dashboard for community data and health. This site is made with Svelte, Tailwind CSS, Maplibre GL, and Vite.",
+    "title": "Quality of Life Explorer",
+    "thumbnail": "qolexplorer.webp",
+    "github": "https://github.com/tobinbradley/quality-of-life-explorer",
+    "theURL": "http://mcmap.org/qol"
+  },
+  {
+    "description": "A dashboard for community data and health. This site is made with Svelte, Tailwind CSS, Leaflet, and Vite.",
+    "title": "Community Compass",
+    "thumbnail": "communitycompass.webp",
+    "github": "https://github.com/tobinbradley/community_compass",
+    "theURL": "https://mcmap.org/compass"
+  },
+  {
+    "description": "GeoPortal is a one stop shopping for location information government app. Created with Svelte, Tailwind CSS, MapLibre GJ JS, and Vite.",
+    "title": "GeoPortal",
+    "thumbnail": "geoportal.webp",
+    "github": "https://github.com/tobinbradley/Mecklenburg-County-GeoPortal",
+    "theURL": "https://mcmap.org/geoportal"
+  },
+  {
+    "description": "A simple image viewer made with Leaflet, Svelte and Tailwind.",
+    "title": "Historic Tax Maps",
+    "thumbnail": "historictaxmaps.webp",
+    "github": "https://github.com/tobinbradley/historictaxmaps",
+    "theURL": "https://maps.mecknc.gov/historictaxmaps/"
+  },
+  {
+    "description": "The Dirt-Simple PostGIS HTTP API, or dirt, exposes PostGIS functionality to your applications over HTTP. Build using Fastify.",
+    "title": "Dirt-Simple PostGIS HTTP API",
+    "github": "https://github.com/tobinbradley/dirt-simple-postgis-http-api"
+  },
+  {
+    "description": "Mecklenburg County made this tool to make moving spatial data into Postgres easy to script and schedule. It does that by leveraging the extraordinary ogr-fdw and other foreign data wrappers.",
+    "title": "NodeJS ETL tooling for Postgres/PostGIS",
+    "github": "https://github.com/tobinbradley/historictaxmaps"
+  }
+]
