@@ -8,7 +8,7 @@
   let promise = fetch(jsonFile).then((x) => x.json())
 
   // handle hash
-  if (window.location.hash) filterString = window.location.hash.substring(1)
+  if (window.location.hash) filterString = decodeURI(window.location.hash.substring(1))
   $: if (filterString.length > 0) window.location.hash = filterString
 
   function filter(data, str) {
@@ -73,6 +73,13 @@
 
     {/each}
 
+  </div>
+  <div class="container max-w-3xl mx-auto mt-24">
+    <p class="text-sm italic text-center">
+      *Unless otherwise specified, our data is released under a
+      <a class="text-sky-600 font-semibold hover:underline" href="https://creativecommons.org/public-domain/cc0/" target="_blank">CCO ("No Rights Reserved")</a> license
+      and our open source software projects are released under a <a class="text-sky-600 font-semibold hover:underline" href="https://en.wikipedia.org/wiki/MIT_License" target="_blank">MIT software license</a>.
+    </p>
   </div>
 
 {:catch error}
