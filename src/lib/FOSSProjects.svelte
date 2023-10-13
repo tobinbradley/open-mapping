@@ -45,7 +45,7 @@
     {#each data.sort((a, b) => {
       return a.title < b.title ? -1 : 1
     }) as el}
-      <li class="mb-3"><a class="text-sky-600 font-bold hover:underline" href="{el.theURL}" target="_blank">{el.title}</a>: {@html el.description}</li>
+      <li class="mb-3"><a class="text-primaryTeal font-semibold hover:underline" href="{el.theURL}" target="_blank">{el.title}</a>: {@html el.description}</li>
 
     {/each}
     </ul>

@@ -3,7 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Open Mapping</title>
+    <meta name="description" content="Mecklenburg County GIS portal for open data and open source software.">
+    <meta name="author" content="Tobin Bradley">
+    <title>Open Mapping - Apps</title>
 
     <!-- preconnect for performance -->
     <link rel="preconnect" href="https://www.google-analytics.com">
@@ -16,10 +18,15 @@
     <meta name="theme-color" content="#2A4365"/>
     <link rel="manifest" href="manifest.json">
 
-  <!-- preload logo for performance -->
-  <link rel="preload" href="./img/logo.svg" as="image">
+    <!-- preconnect to the font file's domain -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" />
+    <!-- preload performance -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap">
+    <link rel="preload" href="./img/logo.svg" as="image">
+
+    <!-- fonts -->
+    <link media="print" onload="this.onload=null;this.removeAttribute('media');" href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
 
   </head>
   <body class="flex flex-col leading-normal tracking-normal min-h-screen">
@@ -62,9 +69,9 @@
           <div class="text-center">
             <img class="max-h-72 inline" src="img/apps.svg" alt="data illustration">
           </div>
-          <h3 class="text-3xl text-gray-800 font-bold leading-none my-3 mt-5 text-center">
+          <h2 class="text-3xl text-gray-800 font-bold leading-none my-3 mt-5 text-center">
               Our Open Source Apps
-          </h3>
+          </h2>
         </div>
       </div>
 
@@ -73,9 +80,9 @@
       <div id="apps" class="container max-w-8xl m-auto my-14"></div>
 
       <div class="container max-w-3xl mx-auto m-8 mt-28">
-        <h3 class="text-center text-3xl text-gray-800 font-bold leading-none mb-3">
+        <h2 class="text-center text-3xl text-gray-800 font-bold leading-none mb-3">
               Projects We <span class="text-primaryPoppyRed">❤</span>
-            </h3>
+            </h2>
             <div class="w-full mb-4">
               <div class="mx-auto h-1 gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
             </div>
@@ -103,9 +110,10 @@
 
 
     <!-- service worker dialog -->
+    <!-- service worker dialog -->
     <dialog
       id="sw-dialog"
-      class="bg-pink-700 text-white px-3 py-2 rounded-r-md border-l-2 border-white shadow-lg"
+      class="bg-primaryPurple text-white px-3 py-2 rounded-r-md border-l-2 border-white shadow-lg"
     >
       <div class="flex place-items-center">
         <div class="flex-1 pr-8 text-lg">
@@ -113,10 +121,10 @@
         </div>
         <div>
           <button
-            class="px-4 py-2 border-2 border-white rounded bg-white text-pink-700 hover:bg-pink-500 hover:text-white transition-colors duration-300"
+            class="px-4 py-2 border-2 border-white outline-none rounded bg-white text-primaryPurple hover:border-pink-400 font-bold transition-colors duration-300"
             onclick="window.location.reload()"
           >
-            Refresh
+            Reload
           </button>
         </div>
       </div>

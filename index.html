@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Mecklenburg County GIS portal for open data and open source software.">
+    <meta name="author" content="Tobin Bradley">
     <title>Open Mapping</title>
 
     <!-- preconnect for performance -->
@@ -16,10 +18,16 @@
     <meta name="theme-color" content="#2A4365"/>
     <link rel="manifest" href="manifest.json">
 
-  <!-- preload logo for performance -->
-  <link rel="preload" href="./img/logo.svg" as="image">
+    <!-- preconnect to the font file's domain -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" />
+    <!-- preload performance -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap">
+    <link rel="preload" href="./img/logo.svg" as="image">
+    <link rel="preload" href="./img/hero.webp" as="image">
+
+    <!-- fonts -->
+    <link media="print" onload="this.onload=null;this.removeAttribute('media');" href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
 
   </head>
   <body class="flex flex-col leading-normal tracking-normal text-white min-h-screen">
@@ -57,16 +65,16 @@
         <!--Left Col-->
         <div class="md:flex flex-col justify-center items-start text-center md:text-left">
           <p class="uppercase tracking-loose w-full">Mecklenburg County GIS</p>
-          <h1 class="my-4 text-5xl font-bold leading-tight">
+          <h2 class="my-4 text-5xl font-bold leading-tight">
             Welcome to Open Mapping
-          </h1>
-          <p class="leading-7 text-2xl mb-8">
+          </h2>
+          <p class="leading-8 text-2xl mb-8">
             Mecklenburg County believes in the power of open data and open source software to inspire innovation and ingenuity.
           </p>
         </div>
         <!--Right Col-->
         <div class="mb-10 text-center">
-          <img class="block m-auto"  src="img/hero.png" alt="open mapping illustration" />
+          <img class="block m-auto"  src="img/hero.webp" alt="open mapping illustration" />
         </div>
       </div>
     </div>
@@ -87,7 +95,7 @@
               Data
             </h3>
             <p class="text-gray-600">
-              <a href="https://en.wikipedia.org/wiki/Open_data" target="_blank" class="text-sky-600 hover:underline font-semibold">Open data</a>:
+              <a href="https://en.wikipedia.org/wiki/Open_data" target="_blank" class="text-primaryTeal hover:underline font-semibold">Open data</a>:
               <ul class="text-gray-600 list-disc ml-6">
                 <li>is accessible to everyone</li>
                 <li>is available in open, non-proprietary formats</li>
@@ -99,7 +107,7 @@
               Grab some open data today and make something amazing!
             </p>
             <p>
-                <a href="data.html" class="mx-auto lg:mx-0 inline-block gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                <a href="data.html" class="mx-auto lg:mx-0 inline-block gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out hover:shadow-primaryPoppyRed/50">
                   Go to Data
                 </a>
               </p>
@@ -118,7 +126,7 @@
                 Apps
               </h3>
               <p class="text-gray-600">
-                <a href="http://en.wikipedia.org/wiki/Open-source_software" target="_blank" class="text-sky-600 font-semibold hover:underline">Open source software</a> gives you the freedom to:
+                <a href="http://en.wikipedia.org/wiki/Open-source_software" target="_blank" class="text-primaryTeal font-semibold hover:underline">Open source software</a> gives you the freedom to:
                 <ul class="text-gray-600 list-disc ml-6">
                   <li>run the program for any purpose</li>
                   <li>study how the program works and to change it so it does computing as you wish</li>
@@ -130,7 +138,7 @@
                 Pull requests are welcome!
               </p>
               <p>
-                <a href="apps.html" class="mx-auto lg:mx-0 inline-block gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                <a href="apps.html" class="mx-auto lg:mx-0 inline-block gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out hover:shadow-primaryPoppyRed/50">
                   Go to Apps
                 </a>
               </p>
@@ -153,7 +161,7 @@
     <!-- service worker dialog -->
     <dialog
       id="sw-dialog"
-      class="bg-pink-700 text-white px-3 py-2 rounded-r-md border-l-2 border-white shadow-lg"
+      class="bg-primaryPurple text-white px-3 py-2 rounded-r-md border-l-2 border-white shadow-lg"
     >
       <div class="flex place-items-center">
         <div class="flex-1 pr-8 text-lg">
@@ -161,10 +169,10 @@
         </div>
         <div>
           <button
-            class="px-4 py-2 border-2 border-white rounded bg-white text-pink-700 hover:bg-pink-500 hover:text-white transition-colors duration-300"
+            class="px-4 py-2 border-2 border-white outline-none rounded bg-white text-primaryPurple hover:border-pink-400 font-bold transition-colors duration-300"
             onclick="window.location.reload()"
           >
-            Refresh
+            Reload
           </button>
         </div>
       </div>

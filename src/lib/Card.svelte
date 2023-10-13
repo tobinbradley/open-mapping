@@ -9,7 +9,7 @@
 
 <style>
   .btn {
-    @apply select-none rounded-lg bg-sky-600 hover:bg-sky-700 stroke-white fill-white py-1 px-2 text-center align-middle text-xs font-bold text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-sky-600/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none;
+    @apply select-none rounded-lg bg-primaryTeal hover:bg-teal-800 stroke-white fill-white py-1 px-2 text-center align-middle text-xs font-bold text-white shadow-md shadow-teal-500/20 transition-all hover:shadow-lg hover:shadow-teal-800/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none duration-300;
   }
   a {
     @apply inline-block;
@@ -34,11 +34,11 @@
       </div>
     {/if}
     <div class="p-6 grow">
-      <h5
+      <h3
         class="text-center mb-2 text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased"
       >
         {record.title}
-      </h5>
+      </h3>
       {#if record.size || record.updated}
         <div class="text-center text-base font-light flex justify-around">
           {#if record.updated}
@@ -54,18 +54,18 @@
         </div>
       {/if}
       <p
-        class="text-lg mt-2 leading-5 text-inherit antialiased"
+        class="description text-lg mt-2 leading-6 text-inherit antialiased"
       >
         {#if record.description.length >= 353}
           {#if readMore}
             {@html record.description}
             <button
-              class="text-blue-700 font-bold ml-1 hover:underline"
+              class="text-primaryTeal font-semibold ml-1 hover:underline"
               on:click={() => (readMore = !readMore)}>...read less</button
             >
           {:else}
             {@html record.description.substring(0, 354)}<button
-              class="text-blue-700 ml-1 font-bold hover:underline"
+              class="text-primaryTeal font-semibold ml-1 hover:underline"
               on:click={() => (readMore = !readMore)}>...read more</button
             >
           {/if}
@@ -77,9 +77,9 @@
 
     <div class="p-6 pt-0 text-right">
       <!-- BYOD -->
-      {#if record.type === 'call'}
+      {#if record.byod}
         <a
-          href="https://maps.mecknc.gov/opendata/{record.pdf}"
+          href="https://maps.mecknc.gov/opendata/{record.byod}"
           on:click={() => sendEvent(record.title, 'BYOD')}
           class="btn"
           target="_blank"
@@ -95,7 +95,8 @@
           >
           BYO Drive</a
         >
-      {:else if record.pdf}
+      {/if}
+
       <!-- pdf -->
       {#if record.pdf}
         <a
@@ -103,7 +104,6 @@
           class="btn" target="_blank">
           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256"><path d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48V216Z"></path></svg>
           PDF</a>
-      {/if}
       {/if}
 
       <!-- {#if record.type === 'call'}

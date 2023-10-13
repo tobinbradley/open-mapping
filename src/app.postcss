@@ -4,9 +4,18 @@
 
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Lato,
+    Seravek,
+    'Gill Sans Nova',
+    Ubuntu,
+    Roboto,
+    Calibri,
+    'DejaVu Sans',
+    source-sans-pro,
+    sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  font-size: 1em;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -19,6 +28,30 @@
   background: linear-gradient(45deg, #d53369 0%, #ef3e3d 50%, #daae51 100%);
   @apply text-white;
 }
+
+.description p {
+  @apply pb-4;
+}
+
+#sw-dialog::backdrop {
+  backdrop-filter: blur(3px);
+}
+#sw-dialog[open] {
+  animation: show-dialog 1s ease normal;
+}
+@keyframes show-dialog {
+  from {
+    opacity: 0;
+    transform: translateY(-110%);
+
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+
 
 @tailwind components;
 
