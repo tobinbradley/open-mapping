@@ -10,5 +10,3 @@ const app = new AssetList({
     jsonFile: "https://maps.mecknc.gov/opendata/data.json"
   }
 })
-
-export default app
