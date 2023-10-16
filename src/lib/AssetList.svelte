@@ -62,7 +62,7 @@
 	<!-- promise was fulfilled -->
   {#if showSearch}
   <div class="mb-16">
-    <input placeholder="search {data.length} datasets" type="text" class="block bg-white border-2 focus:outline-blue-500 text-black text-2xl p-4 mx-auto w-10/12 rounded-lg drop-shadow-lg" bind:value={filterString}>
+    <input placeholder="search {data.length} datasets" type="text" class="block bg-white border-2 focus:outline-primaryTeal text-black text-2xl p-4 mx-auto w-10/12 rounded-lg drop-shadow-lg" bind:value={filterString}>
   </div>
   {/if}
 
