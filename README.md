@@ -1,7 +1,3 @@
 # Open Mapping
 
-## TODO
-
-* Home page text
-* data blub
-* apps blurb(s)
+Big thank you to [Landing-Page](https://github.com/tailwindtoolbox/Landing-Page) for design elements and inspiration.
