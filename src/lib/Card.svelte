@@ -9,7 +9,7 @@
 
 <style>
   .btn {
-    @apply select-none rounded-lg bg-primaryTeal hover:bg-teal-800 stroke-white fill-white py-1 px-2 text-center align-middle text-xs font-bold text-white shadow-md shadow-teal-500/20 transition-all hover:shadow-lg hover:shadow-teal-800/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none duration-300;
+    @apply mt-1 select-none rounded-lg bg-primaryTeal hover:bg-teal-800 stroke-white fill-white py-1 px-2 text-center align-middle text-xs font-bold text-white shadow-md shadow-teal-500/20 transition-all hover:shadow-lg hover:shadow-teal-800/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none duration-300;
   }
   a {
     @apply inline-block;
@@ -26,13 +26,23 @@
   <div
     class="card relative flex flex-col rounded-xl border-2 bg-white bg-clip-border text-gray-700 drop-shadow-lg"
   >
+
+    <!-- thumbnail - priorty to data.json thumbnail -->
     {#if record.thumbnail}
       <div
-        class="relative mx-4 -mt-4 h-48 overflow-hidden rounded-lg bg-blue-gray-500 border-2 bg-clip-border text-white shadow-md shadow-blue-gray-500/40 bg-gradient-to-r from-blue-500 to-blue-600"
+        class="relative mx-4 -mt-4 h-44 overflow-hidden rounded-lg bg-blue-gray-500 bg-clip-border shadow-md shadow-primaryTeal/40 gradient"
       >
-        <img src="https://maps.mecknc.gov/opendata/thumbnails/{record.thumbnail}" alt="" class="w-full" />
+        <img src="https://maps.mecknc.gov/opendata/thumbnails/{record.thumbnail}" alt="thumbnail" class="w-full h-full" />
+      </div>
+    {:else if record.ags}
+      <div
+        class="relative mx-4 -mt-4 h-44 overflow-hidden rounded-lg bg-blue-gray-500 bg-clip-border shadow-md shadow-primaryTeal/40 gradient"
+      >
+        <img src="{record.ags.substring(0, record.ags.length - 1) + 'info/thumbnail'}" alt="thumbnail" class="w-full h-full" />
       </div>
     {/if}
+
+
     <div class="p-6 grow">
       <h3
         class="text-center mb-2 text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased"
@@ -304,29 +314,26 @@
       {/if}
 
       <!-- Esri REST Service -->
-      {#if record.esrirest}
+      {#if record.ags}
         <a
-          href="{record.esrirest}"
+          href="{record.ags}"
           class="btn"
           target="_blank"
-          on:click={() => sendEvent(record.title, 'REST Service')}
+          on:click={() => sendEvent(record.title, 'AGS REST')}
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"  viewBox="0 0 256 256"><path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Zm109.94-52.79a8,8,0,0,0-3.89-5.4l-29.83-17-.12-33.62a8,8,0,0,0-2.83-6.08,111.91,111.91,0,0,0-36.72-20.67,8,8,0,0,0-6.46.59L128,41.85,97.88,25a8,8,0,0,0-6.47-.6A112.1,112.1,0,0,0,54.73,45.15a8,8,0,0,0-2.83,6.07l-.15,33.65-29.83,17a8,8,0,0,0-3.89,5.4,106.47,106.47,0,0,0,0,41.56,8,8,0,0,0,3.89,5.4l29.83,17,.12,33.62a8,8,0,0,0,2.83,6.08,111.91,111.91,0,0,0,36.72,20.67,8,8,0,0,0,6.46-.59L128,214.15,158.12,231a7.91,7.91,0,0,0,3.9,1,8.09,8.09,0,0,0,2.57-.42,112.1,112.1,0,0,0,36.68-20.73,8,8,0,0,0,2.83-6.07l.15-33.65,29.83-17a8,8,0,0,0,3.89-5.4A106.47,106.47,0,0,0,237.94,107.21Zm-15,34.91-28.57,16.25a8,8,0,0,0-3,3c-.58,1-1.19,2.06-1.81,3.06a7.94,7.94,0,0,0-1.22,4.21l-.15,32.25a95.89,95.89,0,0,1-25.37,14.3L134,199.13a8,8,0,0,0-3.91-1h-.19c-1.21,0-2.43,0-3.64,0a8.08,8.08,0,0,0-4.1,1l-28.84,16.1A96,96,0,0,1,67.88,201l-.11-32.2a8,8,0,0,0-1.22-4.22c-.62-1-1.23-2-1.8-3.06a8.09,8.09,0,0,0-3-3.06l-28.6-16.29a90.49,90.49,0,0,1,0-28.26L61.67,97.63a8,8,0,0,0,3-3c.58-1,1.19-2.06,1.81-3.06a7.94,7.94,0,0,0,1.22-4.21l.15-32.25a95.89,95.89,0,0,1,25.37-14.3L122,56.87a8,8,0,0,0,4.1,1c1.21,0,2.43,0,3.64,0a8.08,8.08,0,0,0,4.1-1l28.84-16.1A96,96,0,0,1,188.12,55l.11,32.2a8,8,0,0,0,1.22,4.22c.62,1,1.23,2,1.8,3.06a8.09,8.09,0,0,0,3,3.06l28.6,16.29A90.49,90.49,0,0,1,222.9,142.12Z"></path></svg>
           REST
         </a>
-      {/if}
-
-      <!-- Esri REST Service -->
-      {#if record.esriview}
         <a
-          href="{record.esriview}"
+          href="http://www.arcgis.com/apps/mapviewer/index.html?url={record.ags}"
           class="btn"
           target="_blank"
-          on:click={() => sendEvent(record.title, 'Esri Viewer')}
+          on:click={() => sendEvent(record.title, 'AGS View')}
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"  viewBox="0 0 256 256"><path d="M247.31,124.76c-.35-.79-8.82-19.58-27.65-38.41C194.57,61.26,162.88,48,128,48S61.43,61.26,36.34,86.35C17.51,105.18,9,124,8.69,124.76a8,8,0,0,0,0,6.5c.35.79,8.82,19.57,27.65,38.4C61.43,194.74,93.12,208,128,208s66.57-13.26,91.66-38.34c18.83-18.83,27.3-37.61,27.65-38.4A8,8,0,0,0,247.31,124.76ZM128,192c-30.78,0-57.67-11.19-79.93-33.25A133.47,133.47,0,0,1,25,128,133.33,133.33,0,0,1,48.07,97.25C70.33,75.19,97.22,64,128,64s57.67,11.19,79.93,33.25A133.46,133.46,0,0,1,231.05,128C223.84,141.46,192.43,192,128,192Zm0-112a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Z"></path></svg>
           View
         </a>
+
       {/if}
 
       <!-- metadata     -->
