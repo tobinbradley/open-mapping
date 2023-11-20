@@ -45,26 +45,34 @@
 
     <div class="p-6 grow">
       <h3
-        class="text-center mb-2 text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased"
+        class="text-center text-xl mb-1 font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased"
       >
         {record.title}
       </h3>
+
       {#if record.size || record.updated}
-        <div class="text-center text-base font-light flex justify-around">
+        <div class="text-center text-sm">
           {#if record.updated}
-            <div>
               {record.updated}
-            </div>
+          {/if}
+          {#if record.updated && record.size}
+            &nbsp;  &#8226; &nbsp;
           {/if}
           {#if record.size}
-            <div>
               {record.size}
-            </div>
           {/if}
         </div>
       {/if}
+
+      {#if record.source}
+      <div class="text-center text-sm px-2">
+        Source: {record.source}
+      </div>
+      {/if}
+
+
       <p
-        class="description text-lg mt-2 leading-6 text-inherit antialiased"
+        class="description text-lg mt-4 leading-6 text-inherit antialiased"
       >
         {#if record.description.length >= 353}
           {#if readMore}
